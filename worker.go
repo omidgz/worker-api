@@ -20,6 +20,6 @@ func (w Worker) Do(ch chan Job) {
 	for job := range ch {
 		d := rand.Intn(10)
 		time.Sleep(time.Duration(d) * time.Second)
-		Log(fmt.Sprintf("Job %s done at %s by %d.\n", job.ID, time.Now().Format(time.UnixDate), w.ID))
+		Log(fmt.Sprintf("Job %s done at %s by %d.", job.ID, time.Now().Format(time.UnixDate), w.ID))
 	}
 }
